@@ -1,7 +1,6 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
-import * as env_vars from './../../../environments/environment';
 import { GoogleToken, IAuthError, IAuthSuccess, ICheckData, ICheckResponse, IGoogleCloud, IGoogleCloudSuccess, ILoginData, ILoginResponse, ILogoutSuccess, IRegistrationData } from './../models/models';
 
 @Injectable({
@@ -14,8 +13,6 @@ export class ProviderService extends MainService {
   private port;
   constructor(http: HttpClient) { 
     super(http);
-    this.url = env_vars.api_url.url;
-    this.port = env_vars.api_port.port.toString();
   }
 
   login(loginData: ILoginData):Promise<ILoginResponse> {
