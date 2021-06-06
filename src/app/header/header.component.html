@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid my-4">
+        <a class="navbar-brand" routerLink="/home" routerLinkActive="active">
+            Anti-Plagiarism
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item move-right">
+                    <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+                </li>
+                <li *ngIf="loggedIn" class="nav-item move-right">
+                    <a routerLink="/checker" routerLinkActive="active" class="nav-link">Checker</a>
+                </li>
+                <li *ngIf="!loggedIn" class="nav-item move-right">
+                    <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+                </li>
+                <li *ngIf="!loggedIn" class="nav-item">
+                    <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>
+                </li>
+                <li *ngIf="loggedIn" class="nav-item" (click)="logout()">
+                    <a class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
