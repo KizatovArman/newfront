@@ -23,7 +23,7 @@ export class AuthService {
   } 
 
   clearStorage() { 
-      localStorage.clear(); 
+      localStorage.removeItem('antiplagiarismtoken'); 
   } 
 
   
